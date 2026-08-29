@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VolumePower 2026.4.4\n"
+"Project-Id-Version: VolumePower 2026.9.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-14 13:08+0700\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2026-08-29 15:32+0700\n"
+"PO-Revision-Date: 2026-08-29 15:32+0700\n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -12,65 +12,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: __init__.py:284
-#: __init__.py:307
+#: settings.py:84
+msgid "&Alert me if a playback device becomes disabled or unavailable"
+msgstr "再生デバイスが無効または利用不可になった場合にアラートを表示(&A)"
+
+#: settings.py:61
+msgid "&Number of retries (0 - infinitely):"
+msgstr "リトライ回数 (0 - 無制限)(&N):"
+
+#: settings.py:89
+msgid "&Prevent Windows from going to sleep automatically"
+msgstr "Windowsが自動的にスリープ状態になるのを防ぐ(&P)"
+
+#: settings.py:56
+msgid "&Repeat attempts to initialize the voice synthesizer driver"
+msgstr "音声合成ドライバの初期化を再試行する(&R)"
+
+#: settings.py:79
+msgid "&Unmute all playback devices, not only the default one"
+msgstr "既定のデバイスだけでなく、すべての再生デバイスのミュートを解除(&U)"
+
+#: plugin.py:118
+msgid "Cancelled"
+msgstr "キャンセルされました"
+
+#: powerControl.py:168
 msgid "Cannot get shutdown privilege"
 msgstr "シャットダウン権限を取得できません"
 
-#: __init__.py:170
+#: plugin.py:63
 msgid "Decrease NVDA volume 5%"
 msgstr "NVDAの音量を5%下げる"
 
-#: __init__.py:167
-msgid "Error: Failed to decrease NVDA volume"
-msgstr "エラー: NVDAの音量を下げられませんでした"
+#: plugin.py:81
+msgid "Error: Failed to change NVDA volume"
+msgstr "エラー: NVDAの音量変更に失敗しました"
 
-#: __init__.py:145
-msgid "Error: Failed to increase NVDA volume"
-msgstr "エラー: NVDAの音量を上げられませんでした"
-
-#: __init__.py:134
-#: __init__.py:156
+#: plugin.py:71
 msgid "Error: No synthesizer available"
-msgstr "エラー: 音声合成エンジンが利用可能ではありません"
+msgstr "エラー: 利用可能な音声合成エンジンがありません"
 
-#: __init__.py:297
-#: __init__.py:324
-msgid "Error: {error}"
-msgstr "エラー: {error}"
-
-#: __init__.py:292
-#: __init__.py:319
+#: powerControl.py:172
 msgid "ExitWindowsEx failed with error {error}"
 msgstr "ExitWindowsEx がエラー {error} で失敗しました"
 
-#: __init__.py:148
+#: plugin.py:56
 msgid "Increase NVDA volume 5%"
 msgstr "NVDAの音量を5%上げる"
 
-#: __init__.py:312
-#: __init__.py:335
+#: settings.py:50
+msgid "Increase the volume if it is &lower than:"
+msgstr "音量が指定値より低い場合に上げる(&L):"
+
+#: settings.py:74
+msgid "Play &sound when audio has been successfully turned on"
+msgstr "オーディオが正常にオンになったときに効果音を再生(&S)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Restart"
 msgstr "再起動"
 
-#: __init__.py:351
-msgid "Restart the system"
-msgstr "システムを再起動する"
+#: settings.py:38
+msgid "Select the initial sound system settings that will be set when NVDA starts:"
+msgstr "NVDA起動時に設定される初期サウンドシステム設定を選択:"
 
-#: __init__.py:312
-#: __init__.py:345
+#: settings.py:44
+msgid "Set &custom volume level:"
+msgstr "カスタム音量レベルを設定(&C):"
+
+#: settings.py:31
+msgid "Show countdown &confirmation dialog before shutdown or restart"
+msgstr "シャットダウンまたは再起動の前にカウントダウン確認ダイアログを表示(&C)"
+
+#: plugin.py:96
+msgid "Shut down the system (single tap) or restart it (double tap)"
+msgstr "システムをシャットダウン（1回タップ）または再起動（2回タップ）"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Shutdown"
 msgstr "シャットダウン"
 
-#: __init__.py:354
-msgid "Shutdown the system"
-msgstr "システムを終了する"
+#: settings.py:69
+msgid "Switch to the default audio output &device"
+msgstr "既定のオーディオ出力デバイスに切り替える(&D)"
 
-#: __init__.py:124
-msgid "VolumePower"
-msgstr "VolumePower"
+#: audioGuard.py:301
+msgid "Warning: a sound device that was previously enabled is now unavailable or disabled. Please check Sound settings."
+msgstr "警告: 以前有効だったサウンドデバイスが利用不可または無効になっています。サウンド設定を確認してください。"
 
-#: __init__.py:142
-#: __init__.py:164
+#: countdownDialog.py:42
+msgid "{action} in {seconds}. Press any key to cancel."
+msgstr "{seconds} 秒後に {action} します。取り消すにはいずれかのキーを押してください。"
+
+#: countdownDialog.py:63
+msgid "{seconds}..."
+msgstr "{seconds}..."
+
+#: plugin.py:78
 msgid "{volume}%"
 msgstr "{volume}%"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VolumePower 2026.4.4\n"
+"Project-Id-Version: VolumePower 2026.9.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-14 13:08+0700\n"
+"POT-Creation-Date: 2026-08-29 15:32+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -12,65 +12,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: __init__.py:284
-#: __init__.py:307
+#: settings.py:84
+msgid "&Alert me if a playback device becomes disabled or unavailable"
+msgstr "&Alert me if a playback device becomes disabled or unavailable"
+
+#: settings.py:61
+msgid "&Number of retries (0 - infinitely):"
+msgstr "&Number of retries (0 - infinitely):"
+
+#: settings.py:89
+msgid "&Prevent Windows from going to sleep automatically"
+msgstr "&Prevent Windows from going to sleep automatically"
+
+#: settings.py:56
+msgid "&Repeat attempts to initialize the voice synthesizer driver"
+msgstr "&Repeat attempts to initialize the voice synthesizer driver"
+
+#: settings.py:79
+msgid "&Unmute all playback devices, not only the default one"
+msgstr "&Unmute all playback devices, not only the default one"
+
+#: plugin.py:118
+msgid "Cancelled"
+msgstr "Cancelled"
+
+#: powerControl.py:168
 msgid "Cannot get shutdown privilege"
 msgstr "Cannot get shutdown privilege"
 
-#: __init__.py:170
+#: plugin.py:63
 msgid "Decrease NVDA volume 5%"
 msgstr "Decrease NVDA volume 5%"
 
-#: __init__.py:167
-msgid "Error: Failed to decrease NVDA volume"
-msgstr "Error: Failed to decrease NVDA volume"
+#: plugin.py:81
+msgid "Error: Failed to change NVDA volume"
+msgstr "Error: Failed to change NVDA volume"
 
-#: __init__.py:145
-msgid "Error: Failed to increase NVDA volume"
-msgstr "Error: Failed to increase NVDA volume"
-
-#: __init__.py:134
-#: __init__.py:156
+#: plugin.py:71
 msgid "Error: No synthesizer available"
 msgstr "Error: No synthesizer available"
 
-#: __init__.py:297
-#: __init__.py:324
-msgid "Error: {error}"
-msgstr "Error: {error}"
-
-#: __init__.py:292
-#: __init__.py:319
+#: powerControl.py:172
 msgid "ExitWindowsEx failed with error {error}"
 msgstr "ExitWindowsEx failed with error {error}"
 
-#: __init__.py:148
+#: plugin.py:56
 msgid "Increase NVDA volume 5%"
 msgstr "Increase NVDA volume 5%"
 
-#: __init__.py:312
-#: __init__.py:335
+#: settings.py:50
+msgid "Increase the volume if it is &lower than:"
+msgstr "Increase the volume if it is &lower than:"
+
+#: settings.py:74
+msgid "Play &sound when audio has been successfully turned on"
+msgstr "Play &sound when audio has been successfully turned on"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Restart"
 msgstr "Restart"
 
-#: __init__.py:351
-msgid "Restart the system"
-msgstr "Restart the system"
+#: settings.py:38
+msgid "Select the initial sound system settings that will be set when NVDA starts:"
+msgstr "Select the initial sound system settings that will be set when NVDA starts:"
 
-#: __init__.py:312
-#: __init__.py:345
+#: settings.py:44
+msgid "Set &custom volume level:"
+msgstr "Set &custom volume level:"
+
+#: settings.py:31
+msgid "Show countdown &confirmation dialog before shutdown or restart"
+msgstr "Show countdown &confirmation dialog before shutdown or restart"
+
+#: plugin.py:96
+msgid "Shut down the system (single tap) or restart it (double tap)"
+msgstr "Shut down the system (single tap) or restart it (double tap)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Shutdown"
 msgstr "Shutdown"
 
-#: __init__.py:354
-msgid "Shutdown the system"
-msgstr "Shutdown the system"
+#: settings.py:69
+msgid "Switch to the default audio output &device"
+msgstr "Switch to the default audio output &device"
 
-#: __init__.py:124
-msgid "VolumePower"
-msgstr "VolumePower"
+#: audioGuard.py:301
+msgid "Warning: a sound device that was previously enabled is now unavailable or disabled. Please check Sound settings."
+msgstr "Warning: a sound device that was previously enabled is now unavailable or disabled. Please check Sound settings."
 
-#: __init__.py:142
-#: __init__.py:164
+#: countdownDialog.py:42
+msgid "{action} in {seconds}. Press any key to cancel."
+msgstr "{action} in {seconds}. Press any key to cancel."
+
+#: countdownDialog.py:63
+msgid "{seconds}..."
+msgstr "{seconds}..."
+
+#: plugin.py:78
 msgid "{volume}%"
 msgstr "{volume}%"

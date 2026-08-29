@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VolumePower 2026.4.4\n"
+"Project-Id-Version: VolumePower 2026.9.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-14 13:08+0700\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2026-08-29 15:32+0700\n"
+"PO-Revision-Date: 2026-08-29 15:32+0700\n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Hindi\n"
 "Language: hi\n"
@@ -12,65 +12,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: __init__.py:284
-#: __init__.py:307
+#: settings.py:84
+msgid "&Alert me if a playback device becomes disabled or unavailable"
+msgstr "यदि कोई प्लेबैक डिवाइस अक्षम या अनुपलब्ध हो जाता है तो मुझे सचेत करें (&A)"
+
+#: settings.py:61
+msgid "&Number of retries (0 - infinitely):"
+msgstr "पुनः प्रयासों की संख्या (0 - असीमित) (&N):"
+
+#: settings.py:89
+msgid "&Prevent Windows from going to sleep automatically"
+msgstr "विंडोज को स्वचालित रूप से स्लीप मोड में जाने से रोकें (&P)"
+
+#: settings.py:56
+msgid "&Repeat attempts to initialize the voice synthesizer driver"
+msgstr "वॉइस सिंथेसाइज़र ड्राइवर को इनिशियलाइज़ करने के प्रयासों को दोहराएं (&R)"
+
+#: settings.py:79
+msgid "&Unmute all playback devices, not only the default one"
+msgstr "केवल डिफ़ॉल्ट ही नहीं, सभी प्लेबैक डिवाइस को अनम्यूट करें (&U)"
+
+#: plugin.py:118
+msgid "Cancelled"
+msgstr "रद्द किया गया"
+
+#: powerControl.py:168
 msgid "Cannot get shutdown privilege"
-msgstr "शटडाउन विशेषाधिकार प्राप्त नहीं किया जा सका"
+msgstr "शटडाउन अधिकार प्राप्त नहीं किया जा सका"
 
-#: __init__.py:170
+#: plugin.py:63
 msgid "Decrease NVDA volume 5%"
-msgstr "NVDA वॉल्यूम 5% घटाएं"
+msgstr "NVDA की आवाज़ 5% कम करें"
 
-#: __init__.py:167
-msgid "Error: Failed to decrease NVDA volume"
-msgstr "त्रुटि: NVDA वॉल्यूम घटाने में विफल"
+#: plugin.py:81
+msgid "Error: Failed to change NVDA volume"
+msgstr "त्रुटि: NVDA की आवाज़ बदलने में विफल"
 
-#: __init__.py:145
-msgid "Error: Failed to increase NVDA volume"
-msgstr "त्रुटि: NVDA वॉल्यूम बढ़ाने में विफल"
-
-#: __init__.py:134
-#: __init__.py:156
+#: plugin.py:71
 msgid "Error: No synthesizer available"
 msgstr "त्रुटि: कोई सिंथेसाइज़र उपलब्ध नहीं है"
 
-#: __init__.py:297
-#: __init__.py:324
-msgid "Error: {error}"
-msgstr "त्रुटि: {error}"
-
-#: __init__.py:292
-#: __init__.py:319
+#: powerControl.py:172
 msgid "ExitWindowsEx failed with error {error}"
 msgstr "ExitWindowsEx त्रुटि {error} के साथ विफल रहा"
 
-#: __init__.py:148
+#: plugin.py:56
 msgid "Increase NVDA volume 5%"
-msgstr "NVDA वॉल्यूम 5% बढ़ाएं"
+msgstr "NVDA की आवाज़ 5% बढ़ाएं"
 
-#: __init__.py:312
-#: __init__.py:335
+#: settings.py:50
+msgid "Increase the volume if it is &lower than:"
+msgstr "यदि आवाज़ इससे कम है तो बढ़ाएं (&L):"
+
+#: settings.py:74
+msgid "Play &sound when audio has been successfully turned on"
+msgstr "ऑडियो सफलतापूर्वक चालू होने पर ध्वनि बजाएं (&S)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Restart"
-msgstr "पुनः आरंभ करें"
+msgstr "पुनः प्रारंभ करें"
 
-#: __init__.py:351
-msgid "Restart the system"
-msgstr "सिस्टम को पुनः आरंभ करें"
+#: settings.py:38
+msgid "Select the initial sound system settings that will be set when NVDA starts:"
+msgstr "NVDA प्रारंभ होने पर सेट की जाने वाली प्रारंभिक ध्वनि प्रणाली सेटिंग्स चुनें:"
 
-#: __init__.py:312
-#: __init__.py:345
+#: settings.py:44
+msgid "Set &custom volume level:"
+msgstr "कस्टम वॉल्यूम स्तर सेट करें (&C):"
+
+#: settings.py:31
+msgid "Show countdown &confirmation dialog before shutdown or restart"
+msgstr "बंद करने या पुनः प्रारंभ करने से पहले उलटी गिनती का पुष्टि संवाद दिखाएं (&C)"
+
+#: plugin.py:96
+msgid "Shut down the system (single tap) or restart it (double tap)"
+msgstr "सिस्टम बंद करें (एक बार दबाएं) या पुनः प्रारंभ करें (दो बार दबाएं)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Shutdown"
 msgstr "बंद करें"
 
-#: __init__.py:354
-msgid "Shutdown the system"
-msgstr "सिस्टम बंद करें"
+#: settings.py:69
+msgid "Switch to the default audio output &device"
+msgstr "डिफ़ॉल्ट ऑडियो आउटपुट डिवाइस पर स्विच करें (&D)"
 
-#: __init__.py:124
-msgid "VolumePower"
-msgstr "VolumePower"
+#: audioGuard.py:301
+msgid "Warning: a sound device that was previously enabled is now unavailable or disabled. Please check Sound settings."
+msgstr "चेतावनी: पहले सक्षम किया गया एक ध्वनि उपकरण अब अनुपलब्ध या अक्षम है। कृपया ध्वनि सेटिंग्स की जाँच करें।"
 
-#: __init__.py:142
-#: __init__.py:164
+#: countdownDialog.py:42
+msgid "{action} in {seconds}. Press any key to cancel."
+msgstr "{seconds} सेकंड में {action}। रद्द करने के लिए कोई भी कुंजी दबाएं।"
+
+#: countdownDialog.py:63
+msgid "{seconds}..."
+msgstr "{seconds}..."
+
+#: plugin.py:78
 msgid "{volume}%"
 msgstr "{volume}%"

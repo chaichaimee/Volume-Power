@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VolumePower 2026.4.4\n"
+"Project-Id-Version: VolumePower 2026.9.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-14 13:08+0700\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2026-08-29 15:32+0700\n"
+"PO-Revision-Date: 2026-08-29 15:32+0700\n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
 "Language: ko\n"
@@ -12,65 +12,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: __init__.py:284
-#: __init__.py:307
+#: settings.py:84
+msgid "&Alert me if a playback device becomes disabled or unavailable"
+msgstr "재생 장치를 사용할 수 없거나 비활성화되면 알림(&A)"
+
+#: settings.py:61
+msgid "&Number of retries (0 - infinitely):"
+msgstr "재시도 횟수(0 - 무제한)(&N):"
+
+#: settings.py:89
+msgid "&Prevent Windows from going to sleep automatically"
+msgstr "Windows의 자동 절전 모드 진입 방지(&P)"
+
+#: settings.py:56
+msgid "&Repeat attempts to initialize the voice synthesizer driver"
+msgstr "음성 합성기 드라이버 초기화 재시도(&R)"
+
+#: settings.py:79
+msgid "&Unmute all playback devices, not only the default one"
+msgstr "기본 장치뿐만 아니라 모든 재생 장치 음소거 해제(&U)"
+
+#: plugin.py:118
+msgid "Cancelled"
+msgstr "취소됨"
+
+#: powerControl.py:168
 msgid "Cannot get shutdown privilege"
 msgstr "시스템 종료 권한을 얻을 수 없습니다"
 
-#: __init__.py:170
+#: plugin.py:63
 msgid "Decrease NVDA volume 5%"
-msgstr "NVDA 볼륨 5% 감소"
+msgstr "NVDA 음량 5% 낮추기"
 
-#: __init__.py:167
-msgid "Error: Failed to decrease NVDA volume"
-msgstr "오류: NVDA 볼륨을 줄이지 못했습니다"
+#: plugin.py:81
+msgid "Error: Failed to change NVDA volume"
+msgstr "오류: NVDA 음량을 변경하지 못했습니다"
 
-#: __init__.py:145
-msgid "Error: Failed to increase NVDA volume"
-msgstr "오류: NVDA 볼륨을 높이지 못했습니다"
-
-#: __init__.py:134
-#: __init__.py:156
+#: plugin.py:71
 msgid "Error: No synthesizer available"
 msgstr "오류: 사용할 수 있는 음성 합성기가 없습니다"
 
-#: __init__.py:297
-#: __init__.py:324
-msgid "Error: {error}"
-msgstr "오류: {error}"
-
-#: __init__.py:292
-#: __init__.py:319
+#: powerControl.py:172
 msgid "ExitWindowsEx failed with error {error}"
-msgstr "ExitWindowsEx가 {error} 오류로 실패했습니다"
+msgstr "오류 {error}(으)로 인해 ExitWindowsEx 실행에 실패했습니다"
 
-#: __init__.py:148
+#: plugin.py:56
 msgid "Increase NVDA volume 5%"
-msgstr "NVDA 볼륨 5% 증가"
+msgstr "NVDA 음량 5% 높이기"
 
-#: __init__.py:312
-#: __init__.py:335
+#: settings.py:50
+msgid "Increase the volume if it is &lower than:"
+msgstr "음량이 다음보다 낮으면 높이기(&L):"
+
+#: settings.py:74
+msgid "Play &sound when audio has been successfully turned on"
+msgstr "오디오가 성공적으로 켜지면 소리 재생(&S)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Restart"
 msgstr "다시 시작"
 
-#: __init__.py:351
-msgid "Restart the system"
-msgstr "시스템 다시 시작"
+#: settings.py:38
+msgid "Select the initial sound system settings that will be set when NVDA starts:"
+msgstr "NVDA가 시작될 때 설정할 초기 사운드 시스템 설정을 선택하십시오:"
 
-#: __init__.py:312
-#: __init__.py:345
+#: settings.py:44
+msgid "Set &custom volume level:"
+msgstr "사용자 지정 음량 수준 설정(&C):"
+
+#: settings.py:31
+msgid "Show countdown &confirmation dialog before shutdown or restart"
+msgstr "시스템 종료 또는 다시 시작 전 카운트다운 확인 대화상자 표시(&C)"
+
+#: plugin.py:96
+msgid "Shut down the system (single tap) or restart it (double tap)"
+msgstr "시스템 종료(한 번 누름) 또는 다시 시작(두 번 누름)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Shutdown"
-msgstr "종료"
-
-#: __init__.py:354
-msgid "Shutdown the system"
 msgstr "시스템 종료"
 
-#: __init__.py:124
-msgid "VolumePower"
-msgstr "VolumePower"
+#: settings.py:69
+msgid "Switch to the default audio output &device"
+msgstr "기본 오디오 출력 장치로 전환(&D)"
 
-#: __init__.py:142
-#: __init__.py:164
+#: audioGuard.py:301
+msgid "Warning: a sound device that was previously enabled is now unavailable or disabled. Please check Sound settings."
+msgstr "경고: 이전에 활성화된 사운드 장치를 사용할 수 없거나 비활성화되었습니다. 사운드 설정을 확인하십시오."
+
+#: countdownDialog.py:42
+msgid "{action} in {seconds}. Press any key to cancel."
+msgstr "{seconds}초 후 {action}합니다. 취소하려면 아무 키나 누르십시오."
+
+#: countdownDialog.py:63
+msgid "{seconds}..."
+msgstr "{seconds}..."
+
+#: plugin.py:78
 msgid "{volume}%"
 msgstr "{volume}%"

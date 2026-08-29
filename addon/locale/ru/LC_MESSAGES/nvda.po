@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VolumePower 2026.4.4\n"
+"Project-Id-Version: VolumePower 2026.9.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-14 13:08+0700\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2026-08-29 15:32+0700\n"
+"PO-Revision-Date: 2026-08-29 15:32+0700\n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -12,65 +12,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: __init__.py:284
-#: __init__.py:307
-msgid "Cannot get shutdown privilege"
-msgstr "Не удалось получить права на выключение"
+#: settings.py:84
+msgid "&Alert me if a playback device becomes disabled or unavailable"
+msgstr "&Предупреждать, если устройство воспроизведения отключено или недоступно"
 
-#: __init__.py:170
+#: settings.py:61
+msgid "&Number of retries (0 - infinitely):"
+msgstr "&Количество повторных попыток (0 - бесконечно):"
+
+#: settings.py:89
+msgid "&Prevent Windows from going to sleep automatically"
+msgstr "&Предотвращать автоматический переход Windows в спящий режим"
+
+#: settings.py:56
+msgid "&Repeat attempts to initialize the voice synthesizer driver"
+msgstr "&Повторять попытки инициализации драйвера речевого синтезатора"
+
+#: settings.py:79
+msgid "&Unmute all playback devices, not only the default one"
+msgstr "Включить звук для &всех устройств воспроизведения, а не только по умолчанию"
+
+#: plugin.py:118
+msgid "Cancelled"
+msgstr "Отменено"
+
+#: powerControl.py:168
+msgid "Cannot get shutdown privilege"
+msgstr "Не удалось получить привилегию завершения работы"
+
+#: plugin.py:63
 msgid "Decrease NVDA volume 5%"
 msgstr "Уменьшить громкость NVDA на 5%"
 
-#: __init__.py:167
-msgid "Error: Failed to decrease NVDA volume"
-msgstr "Ошибка: не удалось уменьшить громкость NVDA"
+#: plugin.py:81
+msgid "Error: Failed to change NVDA volume"
+msgstr "Ошибка: не удалось изменить громкость NVDA"
 
-#: __init__.py:145
-msgid "Error: Failed to increase NVDA volume"
-msgstr "Ошибка: не удалось увеличить громкость NVDA"
-
-#: __init__.py:134
-#: __init__.py:156
+#: plugin.py:71
 msgid "Error: No synthesizer available"
-msgstr "Ошибка: синтезатор недоступен"
+msgstr "Ошибка: нет доступного синтезатора"
 
-#: __init__.py:297
-#: __init__.py:324
-msgid "Error: {error}"
-msgstr "Ошибка: {error}"
-
-#: __init__.py:292
-#: __init__.py:319
+#: powerControl.py:172
 msgid "ExitWindowsEx failed with error {error}"
 msgstr "Ошибка ExitWindowsEx: {error}"
 
-#: __init__.py:148
+#: plugin.py:56
 msgid "Increase NVDA volume 5%"
 msgstr "Увеличить громкость NVDA на 5%"
 
-#: __init__.py:312
-#: __init__.py:335
+#: settings.py:50
+msgid "Increase the volume if it is &lower than:"
+msgstr "Увеличить громкость, если она &ниже:"
+
+#: settings.py:74
+msgid "Play &sound when audio has been successfully turned on"
+msgstr "Воспроизводить &звук при успешном включении аудио"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Restart"
 msgstr "Перезагрузка"
 
-#: __init__.py:351
-msgid "Restart the system"
-msgstr "Перезагрузить систему"
+#: settings.py:38
+msgid "Select the initial sound system settings that will be set when NVDA starts:"
+msgstr "Выберите начальные настройки звуковой системы при запуске NVDA:"
 
-#: __init__.py:312
-#: __init__.py:345
+#: settings.py:44
+msgid "Set &custom volume level:"
+msgstr "Задать &пользовательский уровень громкости:"
+
+#: settings.py:31
+msgid "Show countdown &confirmation dialog before shutdown or restart"
+msgstr "Показывать диалог &подтверждения с обратным отсчётом перед выключением или перезагрузкой"
+
+#: plugin.py:96
+msgid "Shut down the system (single tap) or restart it (double tap)"
+msgstr "Завершение работы системы (одно нажатие) или перезагрузка (двойное нажатие)"
+
+#: plugin.py:113
+#: plugin.py:123
 msgid "Shutdown"
 msgstr "Завершение работы"
 
-#: __init__.py:354
-msgid "Shutdown the system"
-msgstr "Выключить систему"
+#: settings.py:69
+msgid "Switch to the default audio output &device"
+msgstr "Переключиться на &устройство вывода звука по умолчанию"
 
-#: __init__.py:124
-msgid "VolumePower"
-msgstr "VolumePower"
+#: audioGuard.py:301
+msgid "Warning: a sound device that was previously enabled is now unavailable or disabled. Please check Sound settings."
+msgstr "Предупреждение: ранее включённое звуковое устройство сейчас недоступно или отключено. Проверьте настройки звука."
 
-#: __init__.py:142
-#: __init__.py:164
+#: countdownDialog.py:42
+msgid "{action} in {seconds}. Press any key to cancel."
+msgstr "{action} через {seconds} сек. Нажмите любую клавишу для отмены."
+
+#: countdownDialog.py:63
+msgid "{seconds}..."
+msgstr "{seconds}..."
+
+#: plugin.py:78
 msgid "{volume}%"
 msgstr "{volume}%"
