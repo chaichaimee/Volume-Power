@@ -67,6 +67,11 @@ class AudioGuardEngine:
 		self.loadSettings()
 		self._sleepPrevented = False
 		self._synthResetAttempts = 0
+		# Liveness flag consulted by the self-rescheduling synth-reset loop before it
+		# re-arms itself, so a stale timer from a terminated instance can never fire
+		# again after an add-on reload (see Section 5.14).
+		self._isActive = True
+		self._pendingSynthResetTimer: Optional[wx.CallLater] = None
 
 	def loadSettings(self) -> None:
 		"""Load audio guard settings from the JSON file, falling back to defaults on missing or invalid data."""
@@ -316,6 +321,8 @@ class AudioGuardEngine:
 		of a blocking sleep loop or a fixed-interval loop, so the main event pump is
 		never starved by repeated failing driver reload attempts.
 		"""
+		if not self._isActive:
+			return
 		activeSynth = synthDriverHandler.getSynth()
 		targetSynthName = config.conf["speech"]["synth"]
 		if activeSynth and activeSynth.name == targetSynthName:
@@ -324,7 +331,17 @@ class AudioGuardEngine:
 		self._attemptSynthReset()
 
 	def _attemptSynthReset(self) -> None:
-		"""Perform a single synth reinitialization attempt and reschedule itself if needed."""
+		"""Perform a single synth reinitialization attempt and reschedule itself if needed.
+
+		Checks self._isActive both on entry and again before rearming the next
+		core.callLater call. This instance's terminate() flips that flag to False and
+		stops any pending call, but the flag is still consulted here because a call
+		already in flight when terminate() runs must not resurrect itself with a new
+		scheduled call afterwards (see Section 5.14).
+		"""
+		self._pendingSynthResetTimer = None
+		if not self._isActive:
+			return
 		activeSynth = synthDriverHandler.getSynth()
 		targetSynthName = config.conf["speech"]["synth"]
 		if activeSynth and activeSynth.name == targetSynthName:
@@ -345,7 +362,8 @@ class AudioGuardEngine:
 			SYNTH_RESET_MAX_RETRY_DELAY_MS,
 		)
 		self._synthResetAttempts += 1
-		core.callLater(retryDelayMs, self._attemptSynthReset)
+		if self._isActive:
+			self._pendingSynthResetTimer = core.callLater(retryDelayMs, self._attemptSynthReset)
 
 	def switchToDefaultOutputDevice(self) -> bool:
 		"""Switch NVDA audio output back to the system default device.
@@ -405,6 +423,24 @@ class AudioGuardEngine:
 			ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS)
 			self._sleepPrevented = False
 
+	def terminate(self) -> None:
+		"""Stop the self-rescheduling synth-reset loop so it cannot fire against this
+		instance after the add-on is disabled or reloaded without a full NVDA restart.
+
+		Flips the liveness flag first, then stops any already-scheduled core.callLater
+		handle. Both steps are needed: stopping only the pending handle would still
+		leave a call currently executing free to re-arm a new one, and flipping only
+		the flag would leave an already-scheduled handle to fire once more before the
+		flag is next checked.
+		"""
+		self._isActive = False
+		if self._pendingSynthResetTimer is not None:
+			try:
+				self._pendingSynthResetTimer.Stop()
+			except Exception as stopError:
+				log.debug("Failed to stop pending synth reset timer: %s", str(stopError))
+			self._pendingSynthResetTimer = None
+
 
 _activeEngine: Optional[AudioGuardEngine] = None
 
@@ -418,3 +454,14 @@ def getActiveEngine() -> AudioGuardEngine:
 	if _activeEngine is None:
 		_activeEngine = AudioGuardEngine()
 	return _activeEngine
+
+
+def clearActiveEngine() -> None:
+	"""Clear the shared AudioGuardEngine singleton on plugin terminate().
+
+	Without this, a subsequent getActiveEngine() call after an add-on reload would
+	return the same terminated instance instead of constructing a fresh one, which
+	is the module-level-singleton lifecycle gap called out in Section 5.14.
+	"""
+	global _activeEngine
+	_activeEngine = None

@@ -40,7 +40,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self, *args, **kwargs) -> None:
 		"""This will be called when NVDA is finished with this global plugin."""
 		super().terminate(*args, **kwargs)
+		# Stops the self-rescheduling synth-reset loop before anything else, so it
+		# cannot keep calling synthDriverHandler.setSynth() against a plugin instance
+		# that no longer owns valid state after an add-on disable/reload.
+		self._audioGuardEngine.terminate()
 		self._audioGuardEngine.releaseSleepPrevention()
+		audioGuard.clearActiveEngine()
 		try:
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(AudioGuardSettingsPanel)
 		except ValueError:
